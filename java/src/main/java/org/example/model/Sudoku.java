@@ -1,7 +1,7 @@
-package org.example.model;
-
-public class Sudoku {
-
-    private int[][]
-
-}
+//package org.example.model;
+//
+//public class Sudoku {
+//
+//    private int[][]
+//
+//}

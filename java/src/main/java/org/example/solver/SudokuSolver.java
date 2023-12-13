@@ -19,8 +19,10 @@ public class SudokuSolver {
                 {9, 2, 0, 1, 7, 0, 3, 0, 5},
                 {8, 5, 1, 0, 4, 0, 0, 0, 0}
         };
-        List<SudokuStructure> rows = new ArrayList<>();
-        List<SudokuStructure> columns = new ArrayList<>();
-        List<SudokuStructure> bigBoxes = new ArrayList<>();
+        Puzzle puzzle = new Puzzle();
+        puzzle.fillPuzzle(testBoard);
+        puzzle.solve();
+        //puzzle.printSolution();
+
     }
 }
