@@ -22,7 +22,7 @@ public class SudokuSolver {
         Puzzle puzzle = new Puzzle();
         puzzle.fillPuzzle(testBoard);
         puzzle.solve();
-        //puzzle.printSolution();
+        puzzle.printSolution();
 
     }
 }

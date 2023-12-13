@@ -56,13 +56,16 @@ public class Puzzle {
                             guessNext(i);
                         } catch (GuessingException e){
                             currentSquare.revertBox();
+                        } catch (SuccessException e){
+                            System.out.println(e.getMessage());
+                            return;
                         }
                     }
                 }
             }
         }
     }
-    private void guessNext(int nextTest) throws GuessingException{
+    private void guessNext(int nextTest) throws GuessingException, SuccessException{
         for(int i = nextTest; i < 81; i++){
             SmallBox currentSquare = smallBoxes.get(i);
             if (currentSquare.getSmallBoxValue().equals(0)){
@@ -82,21 +85,21 @@ public class Puzzle {
                 }
             }
         }
-        System.out.println("Success! you did it");
+        throw new SuccessException("Reached end of recursion. Successful solve!");
 
     }
 
-//    public void printSolution(){
-//        for (int i = 0; i < 81; ){
-//            String rowString = "{ ";
-//            for (int column = 0; column < 9; column ++){
-//                SmallBox currentBox = smallBoxes.get(i);
-//                rowString += currentBox.getSmallBoxValue();
-//                i++;
-//            }
-//            rowString += "}";
-//            System.out.println(rowString);
-//        }
-//    }
+    public void printSolution(){
+        for (int i = 0; i < 81; ){
+            String rowString = "{ ";
+            for (int column = 0; column < 9; column ++){
+                SmallBox currentBox = smallBoxes.get(i);
+                rowString += currentBox.getSmallBoxValue() + " ";
+                i++;
+            }
+            rowString += "}";
+            System.out.println(rowString);
+        }
+    }
 
 }
