@@ -1,5 +1,8 @@
 package org.example.solver;
 
+import org.example.model.Grid;
+import org.example.services.SudokuService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +26,11 @@ public class SudokuSolver {
         puzzle.fillPuzzle(testBoard);
         puzzle.solve();
         puzzle.printSolution();
-
+        SudokuService service = new SudokuService();
+        Grid pulledGrid = service.getNewPuzzle();
+        Puzzle secondPuzzle = new Puzzle();
+        secondPuzzle.fillPuzzle(pulledGrid.getValue());
+        secondPuzzle.solve();
+        secondPuzzle.printSolution();
     }
 }

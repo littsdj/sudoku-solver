@@ -102,4 +102,18 @@ public class Puzzle {
         }
     }
 
+    public void checkSolution(int[][] solution){
+        for(int i = 0; i < 81; i++){
+            int row = i / 9;
+            int column = i % 9;
+            int smallBoxValue = smallBoxes.get(i).getSmallBoxValue();
+            int solutionValue = solution[row][column];
+            if (smallBoxValue != solutionValue){
+                System.out.println("solutions do not match");
+                return;
+            }
+        }
+        System.out.println("Calculated solution matched solution from API");
+    }
+
 }
