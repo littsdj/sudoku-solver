@@ -22,15 +22,16 @@ public class SudokuSolver {
                 {9, 2, 0, 1, 7, 0, 3, 0, 5},
                 {8, 5, 1, 0, 4, 0, 0, 0, 0}
         };
-        Puzzle puzzle = new Puzzle();
-        puzzle.fillPuzzle(testBoard);
-        puzzle.solve();
-        puzzle.printSolution();
+//        Puzzle puzzle = new Puzzle();
+//        puzzle.fillPuzzle(testBoard);
+//        puzzle.solve();
+//        puzzle.printSolutions();
         SudokuService service = new SudokuService();
         Grid pulledGrid = service.getNewPuzzle();
         Puzzle secondPuzzle = new Puzzle();
         secondPuzzle.fillPuzzle(pulledGrid.getValue());
         secondPuzzle.solve();
-        secondPuzzle.printSolution();
+        secondPuzzle.printSolutions();
+        secondPuzzle.solve();
     }
 }
